@@ -1,0 +1,16 @@
+/.settings
+**/model/
+/target
+.classpath
+.project
+.springBeans
+events.*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### IntelliJ IDEA Web ###
+/out/
