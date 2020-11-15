@@ -25,8 +25,11 @@ public class TensorflowGraph {
 	public static Object runGraph(Graph graph, Double x, Double y) {
 		Object result;
 		try (Session sess = new Session(graph)) {
-			result = sess.runner().fetch("z").feed("x", Tensor.<Double>create(x, Double.class))
-					.feed("y", Tensor.<Double>create(y, Double.class)).run().get(0).expect(Double.class)
+			result = sess.runner()
+					.fetch("z")
+					.feed("x", Tensor.<Double>create(x, Double.class))
+					.feed("y", Tensor.<Double>create(y, Double.class))
+					.run().get(0).expect(Double.class)
 					.doubleValue();
 		}
 		return result;
